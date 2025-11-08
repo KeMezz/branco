@@ -401,25 +401,37 @@ a {
 }
 
 /* 料金テーブル */
+.table-unit {
+  font-size: var(--font-xs);
+  color: #666;
+  margin-bottom: var(--spacing-xs);
+  text-align: right;
+}
+
 .table-wrapper {
-  overflow-x: auto;
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-xs);
   border-radius: var(--radius-sm);
   box-shadow: 0 2px 8px var(--shadow-light);
-  -webkit-overflow-scrolling: touch; /* スムーズなスクロール（iOS） */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .price-table {
   width: 100%;
-  min-width: 500px; /* モバイルで横スクロールを強制 */
   border-collapse: collapse;
   background: var(--card-bg);
-  font-size: var(--font-sm);
+  font-size: 0.75rem; /* モバイルでさらに小さく */
+}
+
+@media (min-width: 480px) {
+  .price-table {
+    font-size: 0.875rem; /* 少し大きな画面では読みやすく */
+  }
 }
 
 @media (min-width: 768px) {
   .price-table {
-    min-width: auto; /* タブレット以上では通常表示 */
+    font-size: var(--font-sm); /* タブレット以上では通常サイズ */
   }
 }
 
@@ -429,15 +441,53 @@ a {
 }
 
 .price-table th {
-  padding: var(--spacing-sm);
-  text-align: left;
+  padding: 0.4rem 0.5rem; /* パディングを削減 */
+  text-align: center;
   font-weight: 700;
   white-space: nowrap;
+  font-size: 0.7rem; /* ヘッダーを小さく */
+}
+
+@media (min-width: 480px) {
+  .price-table th {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .price-table th {
+    padding: var(--spacing-sm);
+    font-size: var(--font-sm);
+  }
+}
+
+.price-table th:first-child {
+  text-align: left;
 }
 
 .price-table td {
-  padding: var(--spacing-sm);
+  padding: 0.4rem 0.5rem; /* パディングを削減 */
   border-bottom: 1px solid var(--primary-pink);
+  white-space: nowrap;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .price-table td {
+    padding: 0.6rem 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .price-table td {
+    padding: var(--spacing-sm);
+  }
+}
+
+.price-table td:first-child {
+  text-align: left;
+  font-weight: 500;
 }
 
 .price-table tbody tr:hover {
