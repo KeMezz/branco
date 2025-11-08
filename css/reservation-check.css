@@ -1,0 +1,261 @@
+/* エラー通知 */
+.error-notice {
+  background: #fff5f5;
+  border: 2px solid var(--accent-red);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  display: none;
+}
+
+.error-notice.active {
+  display: block;
+  animation: shake 0.3s ease;
+}
+
+.error-notice-text {
+  color: var(--accent-red);
+  font-weight: 700;
+  text-align: center;
+  font-size: var(--font-sm);
+  margin: 0;
+}
+
+/* 予約詳細カード */
+.reservation-detail {
+  margin-top: var(--spacing-md);
+}
+
+/* 変更ボタンを中央揃え */
+.reservation-detail .btn-submit {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--primary-pink-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-xs);
+  gap: var(--spacing-sm);
+}
+
+.detail-row:last-of-type {
+  margin-bottom: var(--spacing-lg);
+}
+
+.detail-label {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: var(--font-sm);
+  white-space: nowrap;
+}
+
+.detail-value {
+  color: var(--accent-red);
+  font-weight: 600;
+  font-size: var(--font-sm);
+  text-align: right;
+}
+
+.detail-message {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.detail-message .detail-value {
+  text-align: left;
+  margin-top: var(--spacing-xs);
+  word-break: break-all;
+}
+
+/* ==========================================
+   モーダルスタイル
+   ========================================== */
+
+/* モーダルオーバーレイ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--spacing-md);
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+/* モーダルコンテナ */
+.modal-container {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* モーダルヘッダー（固定） */
+.modal-header {
+  background: var(--accent-red);
+  color: var(--text-light);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-weight: 700;
+  font-size: var(--font-lg);
+  margin: 0;
+}
+
+/* モーダルボディ（スクロール可能） */
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* スクロールバースタイル（WebKit） */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: var(--primary-pink-light);
+  border-radius: var(--radius-sm);
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--accent-red);
+  border-radius: var(--radius-sm);
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-red-dark);
+}
+
+/* モーダルフッター（固定） */
+.modal-footer {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-top: 2px solid var(--primary-pink);
+  background: var(--primary-pink-light);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.btn-cancel,
+.btn-confirm {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-cancel {
+  background: #ffffff;
+  color: var(--text-dark);
+  border: 2px solid var(--accent-red);
+}
+
+.btn-cancel:hover {
+  background: var(--accent-red);
+  color: var(--text-light);
+}
+
+.btn-confirm {
+  background: var(--accent-red);
+  color: var(--text-light);
+}
+
+.btn-confirm:hover {
+  background: var(--accent-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-confirm:active,
+.btn-cancel:active {
+  transform: translateY(0);
+}
+
+/* body スクロール防止 */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ==========================================
+   レスポンシブ対応
+   ========================================== */
+
+/* 小画面 (480px以上) */
+@media (min-width: 480px) {
+  .detail-label,
+  .detail-value {
+    font-size: var(--font-md);
+  }
+
+  .error-notice-text {
+    font-size: var(--font-md);
+  }
+}
+
+/* タブレット (768px以上) */
+@media (min-width: 768px) {
+  .modal-container {
+    max-width: 700px;
+  }
+
+  .modal-header h2 {
+    font-size: var(--font-xl);
+  }
+
+  .btn-cancel,
+  .btn-confirm {
+    font-size: var(--font-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+/* デスクトップ (1024px以上) */
+@media (min-width: 1024px) {
+  .reservation-detail {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .modal-container {
+    max-width: 800px;
+  }
+}
