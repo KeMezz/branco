@@ -161,6 +161,21 @@ a {
   font-weight: 500;
 }
 
+/* 農場写真 */
+.farm-photo {
+  width: 100%;
+  max-width: 100%;
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.farm-photo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
 /* ==========================================
    予約ボタンエリア
    ========================================== */
