@@ -6,18 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const DUMMY_RESERVATIONS = {
     ヤマダタロウ_08012345678: {
       date: "2025-11-09",
-      time: "10:00",
+      time: "10:00~10:45",
       name: "ヤマダタロウ",
       phone: "08012345678",
       adult: 1,
       elementary: 1,
       child: 1,
       infant: 1,
-      message: "車椅子利用希望",
+      message: "hogehoge",
     },
     サトウハナコ_09087654321: {
       date: "2025-11-15",
-      time: "14:00",
+      time: "14:00~14:45",
       name: "サトウハナコ",
       phone: "09087654321",
       adult: 2,
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     "1_1": {
       date: "2025-11-15",
-      time: "14:00",
+      time: "14:00~14:45",
       name: "1",
       phone: "1",
       adult: 1,
