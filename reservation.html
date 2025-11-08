@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="branko ichigo 苺狩り予約ページ - 45分食べ放題">
+    <meta name="keywords" content="苺狩り予約,いちご狩り予約,branko ichigo">
+    <title>予約フォーム - branko ichigo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reservation.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="img/logo_with_strawberry.png" alt="branko ichigo ロゴ" class="logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <div class="container">
+            <section class="info-section">
+                <!-- タイトル -->
+                <div class="section-header">
+                    <img src="img/strawberry.png" alt="苺" class="section-icon">
+                    <h2 class="section-title">苺狩り予約（45分食べ放題）</h2>
+                </div>
+
+                <!-- 重要なお知らせ -->
+                <div class="reservation-notice">
+                    <p class="notice-text">4月26日から5月6日までは電話のみ受け付けます</p>
+                </div>
+
+                <!-- 予約フォーム -->
+                <div class="info-card">
+                    <form id="reservationForm" class="reservation-form">
+
+                        <!-- 予約日 -->
+                        <div class="form-group">
+                            <label class="form-label required">予約日</label>
+                            <input type="date" name="date" class="form-input" required>
+                            <span class="error-message">予約日を選択してください</span>
+                        </div>
+
+                        <!-- 予約時間 -->
+                        <div class="form-group">
+                            <label class="form-label required">予約時間</label>
+                            <input type="time" name="time" class="form-input" required>
+                            <span class="error-message">予約時間を選択してください</span>
+                        </div>
+
+                        <!-- 名前 -->
+                        <div class="form-group">
+                            <label class="form-label required">名前（カタカナ）</label>
+                            <input type="text" name="name" class="form-input" placeholder="例：ヤマダタロウ" required>
+                            <span class="error-message">カタカナで名前を入力してください</span>
+                        </div>
+
+                        <!-- 電話番号 -->
+                        <div class="form-group">
+                            <label class="form-label required">電話番号（ハイフンなし）</label>
+                            <input type="tel" name="phone" class="form-input" placeholder="例：09012345678" pattern="[0-9]*"
+                                inputmode="numeric" required>
+                            <span class="error-message">ハイフンなしの電話番号を入力してください</span>
+                        </div>
+
+                        <!-- 人数入力 -->
+                        <div class="form-group">
+                            <label class="form-label required">人数</label>
+
+                            <div class="input-row">
+                                <span class="input-label">大人（中学生以上）：2,500円</span>
+                                <input type="number" name="adult" class="form-input-number" min="0" value="0">
+                            </div>
+
+                            <div class="input-row">
+                                <span class="input-label">小学生：2,000円</span>
+                                <input type="number" name="elementary" class="form-input-number" min="0" value="0">
+                            </div>
+
+                            <div class="input-row">
+                                <span class="input-label">幼児（3歳〜小学生未満）：1,300円</span>
+                                <input type="number" name="child" class="form-input-number" min="0" value="0">
+                            </div>
+
+                            <div class="input-row">
+                                <span class="input-label">乳児（0~2歳）：無料</span>
+                                <input type="number" name="infant" class="form-input-number" min="0" value="0">
+                            </div>
+
+                            <span class="error-message">最低1名以上を選択してください</span>
+                        </div>
+
+                        <!-- その他要望 -->
+                        <div class="form-group">
+                            <label class="form-label">その他、ご要望がございましたら記入してください。</label>
+                            <textarea name="message" class="form-textarea" rows="4"
+                                placeholder="アレルギー情報、車椅子利用などご要望をご記入ください"></textarea>
+                        </div>
+
+                        <!-- 送信ボタン -->
+                        <button type="submit" class="btn-submit">予約する</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-strawberry">
+                <img src="img/strawberry.png" alt="苺" class="footer-icon">
+            </div>
+            <p class="footer-text">皆様のご来園を心よりお待ちしております</p>
+            <p class="copyright">&copy; 2025 branko ichigo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/reservation.js"></script>
+</body>
+
+</html>
