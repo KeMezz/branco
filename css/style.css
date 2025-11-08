@@ -406,13 +406,21 @@ a {
   margin-top: var(--spacing-md);
   border-radius: var(--radius-sm);
   box-shadow: 0 2px 8px var(--shadow-light);
+  -webkit-overflow-scrolling: touch; /* スムーズなスクロール（iOS） */
 }
 
 .price-table {
   width: 100%;
+  min-width: 500px; /* モバイルで横スクロールを強制 */
   border-collapse: collapse;
   background: var(--card-bg);
   font-size: var(--font-sm);
+}
+
+@media (min-width: 768px) {
+  .price-table {
+    min-width: auto; /* タブレット以上では通常表示 */
+  }
 }
 
 .price-table thead {
