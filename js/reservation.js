@@ -5,10 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // すべての.form-groupに.errorクラスを追加
-    const allGroups = form.querySelectorAll(".form-group");
-    allGroups.forEach((group) => {
-      group.classList.add("error");
-    });
+    // ローディング表示
+    Loading.show();
+
+    // すべての.form-groupに.errorクラスを追加（デモ用）
+    // 実際の実装では、バリデーション後にサーバー送信処理を行う
+    setTimeout(function () {
+      Loading.hide();
+      const allGroups = form.querySelectorAll(".form-group");
+      allGroups.forEach((group) => {
+        group.classList.add("error");
+      });
+    }, 2000);
   });
 });
